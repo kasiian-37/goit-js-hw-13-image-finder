@@ -1,0 +1,53 @@
+
+img {
+  width: 100%;
+  display: block;
+}
+body{
+
+  background-image: url(../src/img/bagan-1137015_1280.jpg);
+  background-size: cover;
+}
+.main__input {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  
+
+  /*
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  width: 400px;
+  height: 40px;
+  outline-color: rgb(246, 248, 248);
+  
+  font-size: 16px; */
+}
+.form__input{
+  display: flex;
+  margin-top: 50px;
+  
+}
+.style__input{
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  width: 500px;
+  padding: 10px;
+  margin-right: 5px;
+  
+  box-shadow: 0 5px 10px 0 rgba(20, 20, 20, 0.932)
+}
+.btn__input{
+  border: none;
+  border-radius: 6px;
+  color: white;
+  transition: .2s linear;
+  background: #e95ca3;
+  box-shadow: 0 5px 10px 0 rgba(20, 20, 20, 0.932)
+}
+
+.btn__input:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #eea4e8;
+}
