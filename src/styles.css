@@ -8,6 +8,10 @@ body{
   background-image: url(../src/img/bagan-1137015_1280.jpg);
   background-size: cover;
 }
+[data-pnotify].pnotify.stack-bar-top {
+  width: 50%;
+  border-radius: 0;
+}
 .main__input {
   display: flex;
   /* align-items: center; */
@@ -51,3 +55,4 @@ body{
 .btn__input:hover {
   box-shadow: 0 0 0 2px white, 0 0 0 4px #eea4e8;
 }
+
