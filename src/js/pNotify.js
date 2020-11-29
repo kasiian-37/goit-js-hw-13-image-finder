@@ -1,8 +1,9 @@
 import { alert, Stack } from '@pnotify/core';
 
 const stackForNotify = new Stack({
-  dir1: 'up',
-  firstpos1: 0,
+  dir1: 'down',
+  firstpos1: 40,
+  firstpos2: 40,
   spacing1: 0,
   push: 'bottom',
   maxOpen: 1,
@@ -23,8 +24,8 @@ export function onNotify(
     type,
     stack: stackForNotify,
     delay,
-    mode: 'light',
-    width: `${document.body.clientWidth}px`,
+    styling: 'brighttheme',
+    
   };
   alert(options);
 }
