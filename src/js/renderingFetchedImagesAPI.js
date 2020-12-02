@@ -31,6 +31,7 @@ function onSearch(e) {
   imagesQuery.resetPage();
   clearGallery();
   fetchAndIncrementPage();
+  observer.observe(refs.scrollHelper);
 }
 
 function createImagesListMarkup(images, allImagesCount) {
@@ -44,6 +45,7 @@ function createImagesListMarkup(images, allImagesCount) {
       'notice',
       'Info',
     );
+   
   }
 }
 
@@ -66,6 +68,7 @@ async function fetchAndIncrementPage() {
       imagesQuery.incrementPage();
     });
   } catch (error) {
+    observer.disconnect();
     console.log('Error in fetchAndIncrementPage function:', error);
   }
 }
@@ -74,18 +77,19 @@ function clearGallery() {
   refs.imageList.innerHTML = '';
 }
 
-const onEntry = entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting && imagesQuery.query) {
-      fetchAndIncrementPage();
-    }
-  });
-};
 
-const observer = new IntersectionObserver(onEntry, {
-  rootMargin: '50px',
-});
-observer.observe(refs.scrollHelper);
+// IntersectionObserver
+const options = {
+  rootMargin: '150px',
+  threshold: 0.2,
+};
+const onEntry = () => {
+  fetchAndIncrementPage();
+};
+const observer = new IntersectionObserver(onEntry, options);
+
+
+
 
 function onGalleryItemClick(e) {
   const imageInstance = basicLightbox.create(`
@@ -93,3 +97,6 @@ function onGalleryItemClick(e) {
  `);
   imageInstance.show();
 }
+
+
+
